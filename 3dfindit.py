@@ -91,7 +91,7 @@ def get_url(url):
             return driver
 
         except Exception as e:
-            print('catch err', e)
+            print('catch error', e)
             time.sleep(3)  # Wait before retrying
 
         tries += 1
@@ -136,7 +136,6 @@ def scrape(eclass_code, prod_links):
                     if product_anchor_tag is None:
                         continue  # Skip if no anchor tag found
                     product_link = product_anchor_tag['href']
-                    print('product link', product_link)
                     driver.get(f"https://www.3dfindit.com{product_link}")
 
                     # Wait until the part number elements are loaded on the product detail page
@@ -207,7 +206,6 @@ yn = yn.upper()
 
 if yn == 'N':
     files = glob.glob(os.path.join(datapath, '*'))
-    print('files to', files)
     for file in files:
         try:
             os.unlink(file)
