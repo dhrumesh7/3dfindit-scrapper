@@ -1,0 +1,9 @@
+## Requirements.txt
+
+```txt
+selenium
+beautifulsoup4
+requests
+openpyxl
+webdriver_manager
+sanitize-filename
